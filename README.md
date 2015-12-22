@@ -7,6 +7,8 @@ v0.0.1
 
 Weather box is an app that allows registered users to have specific digital clocks and forecast information by setting up cities which based on their preference. If user keys in "New York, New York" in one of input field, it will show the local time and recent forecast of New York city.
 
+[Github Repo](https://github.com/hungk901/Weather-Box)
+
 -----
 
 ##Installation
@@ -112,3 +114,5 @@ Weather box is an app that allows registered users to have specific digital cloc
 	```
 	
 -
+
+Ray Hung 20151221 @NJ
