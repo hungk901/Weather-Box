@@ -1,0 +1,373 @@
+@import 'reset';
+@import 'variables';
+@import 'grid';
+@import 'box-size-setting';
+@import 'autocomplete';
+@import 'error';
+@import 'index';
+
+body {
+   background-color: #2D3047;
+   color: #F7FFF7;
+}
+
+a {
+   font-weight: 700;
+
+   &:link {
+      color: #F7FFF7;
+      text-decoration: none;
+   }
+   &:visited {
+      color: #F7FFF7;
+   }
+   &:hover {
+      color: #999999;
+   }
+
+   &:active {
+      color: #F7FFF7;
+      text-decoration: none;
+   }
+}
+
+.header {
+   position: relative;
+   background-color: #F7FFF7;
+   margin: 0 auto;
+   max-width: 100vw;
+   height: 3*$leading;
+   color: black;
+   z-index: 1;
+
+   .navigation {
+      margin: 0 auto;
+      max-width: $width-body;
+      z-index: 2;
+
+      #logo {
+         margin-left: $grid-gutter/2;
+         width: $normal-box-size;
+         color: #444444;
+         float: left;
+      }
+      #menu {
+         width: 6*($grid-width + $grid-gutter);
+         font-weight: 300;
+         float: left;
+
+         p {
+            display: inline-block;
+            margin: $leading 0;
+            width: 2*($grid-width + $grid-gutter);
+            text-align: right;
+            float: left;
+
+            &:hover {
+               cursor: pointer;
+               opacity: 0.5;
+            }
+         }
+      }
+      .snsLink {
+         margin: $leading $grid-gutter/2;
+         width: $normal-box-size;
+         float: left;
+         text-align: right;
+
+         ul a {
+            display: block;
+            float: right;
+            width: $leading;
+            height: $leading;
+            background: {
+               image: url("../images/fb-icon.png");
+               size: $leading;
+            }
+         }
+         &:hover {
+            opacity: 0.5;
+         }
+      }
+   }
+}
+
+.greeting {
+   position: relative;
+   margin: $leading auto $leading auto;
+   max-width: $width-body;
+   height: $leading;
+   z-index: 1;
+
+   #hello {
+      margin: {
+         left: $grid-gutter/2;
+         right: $grid-gutter/2;
+      }
+      width: 3*$normal-box-size + 2*$grid-gutter;
+      float: left;
+      font-weight: 300;
+   }
+
+   #logout {
+      margin: {
+         left: $grid-gutter/2;
+         right: $grid-gutter/2;
+      }
+      width: $normal-box-size;
+      text-align: right;
+      float: left;
+   }
+}
+
+.displayBoxes {
+   position: relative;
+   margin: 0 auto;
+   max-width: $width-body;
+   height: 2*$outer-box-size;
+   z-index: 1;
+
+   /* Time Box Display*/
+   .timeBox {
+      position: absolute;
+      margin: $box-margin;
+      padding: $box-padding;
+      width: $inner-box-size;
+      height: $inner-box-size;
+      z-index: 2;
+
+      .timeText {
+         display: inline-block;
+         position: relative;
+         margin: {
+            top: $leading;
+            bottom: $leading;
+         }
+         width: $inner-box-size;
+         height: 2*$grid-width - 2*$leading;;
+         text-align: center;
+
+         .time {
+            font-size: 3*$font-size;
+            font-weight: 700;
+         }
+         .date {
+            font-size: 1.25*$font-size;
+         }
+
+      }
+
+      .currentLocation {
+         position: relative;
+         font-size: $font-size;
+         z-index: 2;
+
+         p {
+            margin: 0 auto;
+
+            .currentCity {
+               $input-border-width: 2px;
+               $input-padding-width: 3*$font-size/4;
+
+               width: $inner-box-size - 2*($input-border-width+$input-padding-width);
+               height: $grid-width/2;
+               border: $input-border-width;
+               padding: 0 $input-padding-width;
+               margin: {
+                  top: $grid-width/2-$grid-gutter/2;
+                  bottom: $grid-gutter/2;
+               }
+               font-size: 3*$font-size/4;
+
+               background: rgba(255,255,255,0.8);
+            }
+
+            input[type="submit"] {
+               display: none;
+               visibility: hidden;
+            }
+         }
+      }
+   }
+
+   /* Weather Box Display*/
+   .forecastBox {
+      position: absolute;
+      margin: $box-margin;
+      width: $normal-box-size;
+      height: $grid-gutter;
+      overflow: hidden;
+      z-index: 3;
+
+      transition: all .25s ease-in;
+
+      &:hover {
+         z-index: 10;
+         width: $inner-box-size;
+         height: $inner-box-size;
+         padding: $grid-gutter;
+         border: 0;
+
+         .forecastText {
+            visibility: visible;
+         }
+      }
+
+      .forecastText {
+         visibility: hidden;
+         background-color: rgba(250,250,250,0.2);
+         display: inline-block;
+         position: relative;
+         text-align: center;
+         font-size: 0.6875*$font-size;
+
+         transition: all .25s ease-in;
+
+         .forecast{
+            z-index: 4;
+            color: #2D3047;
+            float: left;
+            margin: {
+               top: $grid-gutter/2;
+               bottom: $grid-gutter/2;
+               left: $grid-gutter/2;
+               right: $grid-gutter/2;
+            }
+            width: $inner-box-size/3 - 2*$box-margin;
+            height: $inner-box-size/2 - 2*$box-margin;
+
+            img {
+               opacity: 0.9;
+            }
+         }
+      }
+   }
+}
+
+.lastUpdate {
+   position: relative;
+   width: $width-body;
+   height: $leading;
+   margin: 0 auto;
+   z-index: 1;
+   color: rgba(250,250,250,0.8);
+   font-weight: 300;
+   font-size: 3*$font-size/4;
+
+   div {
+      width: $normal-box-size;
+      height: $leading;
+      margin: {
+         left: 3*$outer-box-size + $box-margin;
+         right: $box-margin;
+      }
+
+      #refreshButton {
+         background: {
+            color: transparent;
+            image: url("../images/refresh-button.png");
+            size: $leading/2;
+            position: center;
+            repeat: no-repeat;
+         }
+         margin: 0;
+         border: 0;
+         padding: 0;
+         width: $leading;
+         height: $leading;
+         cursor: pointer;
+         float: left;
+      }
+      #lastUpdateText {
+         float: right;
+      }
+   }
+}
+
+#tBox1 {
+   background-color: #E84855;
+   top: 0;
+   left: 0;
+}
+#wBox1 {
+   background-color: #96E6B3;
+   top: 0;
+   left: 0;
+}
+
+#tBox2 {
+   background-color: #E2E06C;
+   top: 0;
+   left: 1*$outer-box-size;
+}
+#wBox2 {
+   background-color: #7EBDC3;
+   top: 0;
+   left: 1*$outer-box-size;
+}
+
+#tBox3 {
+   background-color: #25D1BD;
+   top: 0;
+   left: 2*$outer-box-size;
+}
+#wBox3 {
+   background-color: #E58C8A;
+   top: 0;
+   left: 2*$outer-box-size;
+}
+
+#tBox4 {
+   background-color: #FF9B71;
+   top: 0;
+   left: 3*$outer-box-size;
+}
+#wBox4 {
+   background-color: #CBE896;
+   top: 0;
+   left: 3*$outer-box-size;
+}
+
+#tBox5 {
+   background-color: #25D1BD;
+   top: 1*$outer-box-size;
+   left: 0*$outer-box-size;
+}
+#wBox5 {
+   background-color: #E58C8A;
+   top: 1*$outer-box-size;
+   left: 0*$outer-box-size;
+}
+
+#tBox6 {
+   background-color: #FF9B71;
+   top: 1*$outer-box-size;
+   left: 1*$outer-box-size;
+}
+#wBox6 {
+   background-color: #CBE896;
+   top: 1*$outer-box-size;
+   left: 1*$outer-box-size;
+}
+
+#tBox7 {
+   background-color: #E84855;
+   top: 1*$outer-box-size;
+   left: 2*$outer-box-size;
+}
+#wBox7 {
+   background-color: #96E6B3;
+   top: 1*$outer-box-size;
+   left: 2*$outer-box-size;
+}
+
+#tBox8 {
+   background-color: #E2E06C;
+   top: 1*$outer-box-size;
+   left: 3*$outer-box-size;
+}
+#wBox8 {
+   background-color: #7EBDC3;
+   top: 1*$outer-box-size;
+   left: 3*$outer-box-size;
+}

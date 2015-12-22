@@ -1,0 +1,18 @@
+$message-box-padding: $grid-width + $grid-gutter;
+
+.displayBoxes {
+
+   .errorMessages {
+      display: inline-block;
+      background-color: #E84855;
+      width: $width-body - 2*$message-box-padding - 2*$box-margin;
+      height: 2*$normal-box-size - 2*$message-box-padding - 2*$box-margin;
+      margin: $grid-gutter/2;
+      padding: {
+         top: $message-box-padding - $grid-gutter;
+         left: $message-box-padding;
+         right: $message-box-padding;
+         bottom: $message-box-padding - $grid-gutter;
+      }
+   }
+}

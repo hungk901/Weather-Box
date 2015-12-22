@@ -1,0 +1,5 @@
+$font-size: 16px;                                              // 16 pixels
+$leading: 1.5 * $font-size;                                    // 24 pixels
+$grid-width: 4.375 * $font-size;                               // 70 pixels
+$grid-gutter: 0.625 * $font-size;                              // 10 pixels
+$width-body: (12 * ($grid-width + $grid-gutter));              // 960 pixels

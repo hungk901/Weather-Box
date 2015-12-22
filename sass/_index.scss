@@ -1,0 +1,96 @@
+.displayBoxes {
+   #indexBox1, #indexBox2,  #indexBox3,  #indexBox4{
+      position: absolute;
+      display: inline-block;
+      margin: $box-margin;
+      padding: $box-padding;
+      height: $inner-box-size;
+   }
+}
+
+#indexBox1 {
+   top: 0;
+   left: 0;
+   width: 3*$inner-box-size + 4*($box-margin + $box-padding);
+   text-align: center;
+   font-size: 3*$font-size;
+
+   div {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+   }
+}
+#indexBox2 {
+   background-color: #FF9B71;
+   top: 0;
+   left: 3*$outer-box-size;
+   width: $inner-box-size;
+   font-size: 2*$font-size;
+   font-weight: 700;
+   text-align: center;
+
+   div {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+   }
+}
+#indexBox3 {
+   background-color: #E84855;
+   top: $outer-box-size;
+   left: 0;
+   width: 2*$inner-box-size + 2*($box-margin + $box-padding);
+   text-align: center;
+   font-size: 1.5*$font-size;
+
+   div {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+   }
+}
+#indexBox4 {
+   background-color: #25D1BD;
+   top: $outer-box-size;
+   left: 2*$outer-box-size;
+   width: 2*$inner-box-size + 2*($box-margin + $box-padding);
+
+   text-align: center;
+   font-size: 1.5*$font-size;
+
+   div {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+
+
+      $input-border-width: 2px;
+      $input-padding-width: $font-size;
+
+      input {
+         width: $normal-box-size - 2*($input-border-width+$input-padding-width);
+         height: 2*$leading - 2*$box-margin;
+         border: $input-border-width;
+         padding: 0 $input-padding-width;
+         margin: $grid-gutter/2;
+         font-size: 3*$font-size/4;
+
+         background: rgba(255,255,255,0.7);
+
+         &:focus{
+            background: rgba(255,255,255,1);
+         }
+      }
+      input[type="submit"] {
+         width: $normal-box-size - 2*$input-border-width;
+         background-color: #2D3047;
+         color: #F7FFF7;
+
+         &:hover {
+            background: #F7FFF7;
+            color: #2D3047;
+         }
+      }
+   }
+}

@@ -1,0 +1,47 @@
+#column-baseline-grid {
+   position: absolute;
+   z-index: 99;
+   top: 0;
+   left: $grid-gutter/2;
+   width: 1280px - $grid-gutter/2;
+   background-image: linear-gradient(90deg, rgba(200, 0, 0, 0.2) $grid-width, transparent 0px),
+                     linear-gradient(0deg, rgba(0, 0, 0, 0) 95%, rgba(56, 255, 255, 0.8) 100%);
+   background-size: ($grid-width + $grid-gutter) 100%,
+                    100% $leading;
+   overflow: hidden;
+}
+
+h1 {
+   font-size: 2 * $font-size;   // 32px
+   line-height: 1.5 * $leading; // 36px
+   margin: (.75 * $leading) 0;  // 18px
+}
+
+h2 {
+   font-size: 1.5 * $font-size; // 24px
+   line-height: 1.5 * $leading; // 36px
+   margin: (.25 * $leading) 0;  // 6px
+}
+
+h3 {
+   font-size: 1.25 * $font-size;
+   line-height: 2 * $leading;
+}
+
+p {
+   line-height: $leading;
+}
+
+blockquote {
+   padding: 0 0 0 $grid-width;
+   margin: 0;
+   line-height: $leading;
+}
+
+q {
+   line-height: $leading;
+}
+
+code {
+   font: 400 $font-size monospace;
+}

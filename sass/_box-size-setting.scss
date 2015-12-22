@@ -1,0 +1,10 @@
+$box-margin:         $grid-gutter / 2;                      //   5 pixels
+$box-padding:        $grid-gutter;                          //  10 pixels
+$normal-box-size:    3 * $grid-width + 2 * $grid-gutter;    // 230 pixels
+$inner-box-size:     $normal-box-size - 2 * $box-padding;   // 210 pixels
+$outer-box-size:     $normal-box-size + 2 * $box-margin;    // 240 pixels
+$triangle-tag-size:  1*$leading;                            //  24 pixels
+
+$forcast-inner-box-size: $outer-box-size + 2*$grid-gutter;  // 260 pixels
+$forcast-small-box-size: $grid-width;                       //  70 pixels
+

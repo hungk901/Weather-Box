@@ -1,0 +1,13 @@
+$autoCompletehHeight: 2*($grid-width + $grid-gutter);
+
+.ui-autocomplete {
+   font-size   : $font-size;
+   max-height  : $autoCompletehHeight;
+   width       : $normal-box-size;
+   overflow-y  : auto;
+   overflow-x  : hidden;
+}
+
+html .ui-autocomplete {
+   height: $autoCompletehHeight;
+}
